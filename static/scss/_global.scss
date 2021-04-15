@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+html{
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p{
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+
+  list-style: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input[type="submit"]{
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+body{
+  background: #E5E5E5;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-title{
+  font-weight: 600;
+  line-height: 24px;
+  color: #0D063A;
+  font-size: 20px;
+  padding: 16px 32px;
+}
+
+.section-page{
+  padding: 0 60px;
+}
+
+.theme-blue{
+  .cards-btn{
+    background: linear-gradient(274.14deg, #0075FF 0%, #15C7FF 100%);
+  }
+}
+
+.theme-magenta{
+  .cards-btn{
+    background: linear-gradient(274.14deg, #6263D5 0%, #ACACFF 100%);
+  }
+}
+
+.theme-yellow{
+  .cards-btn{
+    background: linear-gradient(274.14deg, #FF930F 0%, #FFC75B 100%);
+  }
+}
+
+.theme-purple{
+  .cards-btn{
+    background: linear-gradient(274.14deg, #151233 0%, #454271 100%);
+  }
+}
+
+
+.theme-tomato{
+  .cards-btn{
+    background: linear-gradient(274.14deg, #F12323 0%, #FB6666 100%);
+  }
+}
+
+.theme-green{
+  .cards-btn{
+    background: linear-gradient(312.22deg, #12BA2D 0%, #34F354 100%);
+  }
+}
