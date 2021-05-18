@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Home{% endblock%}
+{% block title %}Smart{% endblock %}
 {% block content %}
-	<div class="content">
+ 	<div class="content">
 		<!-- left side menu -->
 		<aside class="navbar">
-			<a class="logo" href="{% url 'settings:index'%}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+			<a class="logo" href="{% url 'settings:dashboard'%}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
 			<div class="btn-close">
 				<span></span>
 				<span></span>
 			</div>
 			<ul class="menu">
 				<li class="menu__item">
-					<a class="menu__link menu__link--active" href="{% url 'settings:index'%}">
+					<a class="menu__link menu__link--active" href="{%url 'settings:dashboard'%}">
 					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M4 15.3333C4 16.4379 4.89543 17.3333 6 17.3333H12.6667C13.7712 17.3333 14.6667 16.4379 14.6667 15.3333V6C14.6667 4.89543 13.7712 4 12.6667 4H6C4.89543 4 4 4.89543 4 6V15.3333ZM4 26C4 27.1046 4.89543 28 6 28H12.6667C13.7712 28 14.6667 27.1046 14.6667 26V22C14.6667 20.8954 13.7712 20 12.6667 20H6C4.89543 20 4 20.8954 4 22V26ZM17.3333 26C17.3333 27.1046 18.2288 28 19.3333 28H26C27.1046 28 28 27.1046 28 26V16.6667C28 15.5621 27.1046 14.6667 26 14.6667H19.3333C18.2288 14.6667 17.3333 15.5621 17.3333 16.6667V26ZM19.3333 4C18.2288 4 17.3333 4.89543 17.3333 6V10C17.3333 11.1046 18.2288 12 19.3333 12H26C27.1046 12 28 11.1046 28 10V6C28 4.89543 27.1046 4 26 4H19.3333Z" fill="#637798"/>
 					</svg>
@@ -62,23 +62,25 @@
 					</ul>
 				</li>
 				<li class="menu__item">
-					<a class="menu__link" href="config.html">
+					<a class="menu__link" href="{% url 'settings:config'%}">
 						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M25.5215 17.2535C25.5748 16.8535 25.6015 16.4402 25.6015 16.0002C25.6015 15.5735 25.5748 15.1469 25.5081 14.7469L28.2148 12.6402C28.4548 12.4535 28.5215 12.0935 28.3748 11.8269L25.8148 7.4002C25.6548 7.10686 25.3215 7.01353 25.0281 7.10686L21.8414 8.38686C21.1748 7.88019 20.4681 7.45353 19.6814 7.13353L19.2014 3.74686C19.1481 3.42686 18.8814 3.2002 18.5614 3.2002H13.4414C13.1214 3.2002 12.8681 3.42686 12.8148 3.74686L12.3348 7.13353C11.5481 7.45353 10.8281 7.89353 10.1748 8.38686L6.98811 7.10686C6.69478 7.00019 6.36145 7.10686 6.20145 7.4002L3.65478 11.8269C3.49478 12.1069 3.54811 12.4535 3.81478 12.6402L6.52145 14.7469C6.45478 15.1469 6.40145 15.5869 6.40145 16.0002C6.40145 16.4135 6.42811 16.8535 6.49478 17.2535L3.78811 19.3602C3.54811 19.5469 3.48145 19.9069 3.62812 20.1735L6.18811 24.6002C6.34811 24.8935 6.68145 24.9869 6.97478 24.8935L10.1614 23.6135C10.8281 24.1202 11.5348 24.5469 12.3214 24.8669L12.8014 28.2535C12.8681 28.5735 13.1214 28.8002 13.4414 28.8002H18.5614C18.8814 28.8002 19.1481 28.5735 19.1881 28.2535L19.6681 24.8669C20.4548 24.5469 21.1748 24.1202 21.8281 23.6135L25.0148 24.8935C25.3081 25.0002 25.6415 24.8935 25.8015 24.6002L28.3615 20.1735C28.5215 19.8802 28.4548 19.5469 28.2015 19.3602L25.5215 17.2535ZM16.0014 20.8002C13.3614 20.8002 11.2014 18.6402 11.2014 16.0002C11.2014 13.3602 13.3614 11.2002 16.0014 11.2002C18.6414 11.2002 20.8014 13.3602 20.8014 16.0002C20.8014 18.6402 18.6414 20.8002 16.0014 20.8002Z" fill="#637798"/>
 							</svg>
 					Sozlamalarni kiritish
 					</a>
 				</li>
-			</ul>
-			<a type='button' id="myBtn" class="logout-btn" href="{% url 'settings:logout'%}">
+                <li class="menu__item">
+                <a type='button' id="myBtn" class="logout-btn" href="{% url 'settings:logout'%}">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M22.6667 10.6667L20.7867 12.5467L22.8933 14.6667H12V17.3333H22.8933L20.7867 19.44L22.6667 21.3333L28 16L22.6667 10.6667ZM6.66667 6.66667H16V4H6.66667C5.2 4 4 5.2 4 6.66667V25.3333C4 26.8 5.2 28 6.66667 28H16V25.3333H6.66667V6.66667Z" fill="#637798"/>
 					</svg>
 					Chiqish
-			</a>			
+			</a>
+                </li>
+			</ul>
 		</aside>
 	<!-- header -->
-		<header class="header">
+	<header class="header">
 			<div class="btn-wrapper">
 				<div class="menu-btn">
 					<div class="menu-line"></div>
@@ -97,11 +99,11 @@
 				<a class="language__item" href="#">Eng</a>
 				<a class="language__item" href="#">Рус</a>
 			</div>
-			<a class="profile" href="#">
-				<img class="profile__img" src="{% static 'images/profile-img.png' %}" alt="profile-img">
-				<div class="profile__name">Javlon Uchqunov</div>
+			<a class="profile" href="{% url 'settings:profile'%}">
+				<img class="profile__img" src="{{ request.user.profile.photo.url }}" alt="profile-img">
+				<div class="profile__name"> {{user.username}}</div>
 				<div class="profile-dropdown">
-					<a class="profile-dropdown__item" href="#">
+					<a class="profile-dropdown__item" href="{% url 'settings:profile'%}">
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V15C0 15.55 0.45 16 1 16H15C15.55 16 16 15.55 16 15V14C16 11.34 10.67 10 8 10Z" fill="#414141"/>
 							</svg>
@@ -234,4 +236,4 @@
 		</div>
 	</div>
 
-{% endblock%}
+{% endblock %}
