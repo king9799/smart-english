@@ -43,7 +43,7 @@ body{
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .page-title{
@@ -93,4 +93,27 @@ body{
   .cards-btn{
     background: linear-gradient(312.22deg, #12BA2D 0%, #34F354 100%);
   }
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 24px;
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+input[value],
+select{
+  color: grey
 }

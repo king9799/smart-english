@@ -1,19 +1,18 @@
 {% extends "base.html" %}
-{% load static %}
-{% block title %} Rooms {% endblock %}
-
+{% load static%}
+{% block title %} Salary {% endblock%}
 {% block content %}
 		<div class="content">
 			<!-- left side menu -->
 			<aside class="navbar">
-				<a class="logo" href="{% url 'settings:dashboard' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+				<a class="logo" href="{% url 'settings:dashboard' %}"><img src="{% static 'images/logo.png'%}" alt="logo"></a>
 				<div class="btn-close">
 					<span></span>
 					<span></span>
 				</div>
 				<ul class="menu">
 					<li class="menu__item">
-						<a class="menu__link" href="{% url 'settings:dashboard' %}">
+						<a class="menu__link" href="{% url 'settings:dashboard'%}">
 						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 15.3333C4 16.4379 4.89543 17.3333 6 17.3333H12.6667C13.7712 17.3333 14.6667 16.4379 14.6667 15.3333V6C14.6667 4.89543 13.7712 4 12.6667 4H6C4.89543 4 4 4.89543 4 6V15.3333ZM4 26C4 27.1046 4.89543 28 6 28H12.6667C13.7712 28 14.6667 27.1046 14.6667 26V22C14.6667 20.8954 13.7712 20 12.6667 20H6C4.89543 20 4 20.8954 4 22V26ZM17.3333 26C17.3333 27.1046 18.2288 28 19.3333 28H26C27.1046 28 28 27.1046 28 26V16.6667C28 15.5621 27.1046 14.6667 26 14.6667H19.3333C18.2288 14.6667 17.3333 15.5621 17.3333 16.6667V26ZM19.3333 4C18.2288 4 17.3333 4.89543 17.3333 6V10C17.3333 11.1046 18.2288 12 19.3333 12H26C27.1046 12 28 11.1046 28 10V6C28 4.89543 27.1046 4 26 4H19.3333Z" fill="#637798"/>
 						</svg>
@@ -71,7 +70,7 @@
 						</a>
 					</li>
 				</ul>
-				<a class="logout-btn" href="log-in.html">
+				<a class="logout-btn" href="{% url 'settings:login'%}">
 					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M22.6667 10.6667L20.7867 12.5467L22.8933 14.6667H12V17.3333H22.8933L20.7867 19.44L22.6667 21.3333L28 16L22.6667 10.6667ZM6.66667 6.66667H16V4H6.66667C5.2 4 4 5.2 4 6.66667V25.3333C4 26.8 5.2 28 6.66667 28H16V25.3333H6.66667V6.66667Z" fill="#637798"/>
 						</svg>
@@ -100,7 +99,7 @@
 				</div>
 				<a class="profile" href="#">
 					<img class="profile__img" src="{{ request.user.profile.photo.url }}" alt="profile-img">
-					<div class="profile__name">{{user.username}}</div>
+					<div class="profile__name">{{ user.username }}</div>
 					<div class="profile-dropdown">
 						<a class="profile-dropdown__item" href="#">
 							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,24 +128,24 @@
 			<!-- title -->
 				<div class="build-title">
 					<h3 class="page-title">
-						O‘quv xonalarni kiritish va uni jurnali
+						Oylik badal to’lov ta’rif turlarini kiritish va uni jurnali
 					</h3>
-					<a class="enter" href="modal-room.html">Kiritish</a>
+					<a class="enter" href="#">Kiritish</a>
 				</div>
 				<div class="container">
 					<div class="build-search">
 						<div class="build-top">
 							<div class="build-top__item">
 								<input type="text" name="build-search" placeholder="Search">
-								<img class="build-search__img" src="{% static 'images/search.svg' %}" alt="search">
+								<img class="build-search__img" src="{% static 'images/search.svg'%}" alt="search">
 							</div>
 							<div class="build-top__item build-export__second">
 								<ul class="build-export">
 									<li class="build-export__item">Export</li>
 									<ul class="build-export__dropdown">
-										<li><a href="#"><img src="{% static 'images/word.svg' %}" alt="export icon">Word</a></li>	
-										<li><a href="#"><img src="{% static 'images/excel.svg' %}" alt="export icon">Excel</a></li>
-										<li><a href="#"><img src="{% static 'images/pdf.svg' %}" alt="export icon">Pdf</a></li>
+										<li><a href="#"><img src="{% static 'images/word.svg'%}" alt="export icon">Word</a></li>	
+										<li><a href="#"><img src="{% static 'images/excel.svg'%}" alt="export icon">Excel</a></li>
+										<li><a href="#"><img src="{% static 'images/pdf.svg'%}" alt="export icon">Pdf</a></li>
 									</ul>
 								</ul>
 								<div class="build-export__number">
@@ -154,55 +153,63 @@
 								</div>
 							</div>
 						</div>
-							<ul class="room-table build-table build-table--bold">
+						<ul class="salary-table build-table build-table--bold ">
 							<li class="build-table__item build-table__item--1">
 								№
 							</li>
 							<li class="build-table__item build-table__item--2">
-                               O‘quv bino nomini tanlash 
+								O‘quv fanlar nomini tanlash
 							</li>
 							<li class="build-table__item build-table__item--3">
-								O‘quv xonalarni <br>
-                                joylashuv raqami
+								Dars uslubi
 							</li>
 							<li class="build-table__item build-table__item--4">
-								O‘quv dars xonalar turi
+								Dars turlari
 							</li>
-                           <li class="build-table__item build-table__item--5">
-								Birirktirilgan mas’ul shaxs
+							<li class="build-table__item build-table__item--5">
+								Dars guruhlar turlari
+							</li>
+							<li class="build-table__item build-table__item--6">
+								To‘lov ta’rif oylar soni
 							</li>
 							<li class="build-table__item build-table__item--7">
-							
+								Oylik badal to‘lov summasi
+							</li>
+              <li class="build-table__item build-table__item--7">
 							</li>
 						</ul>
 					</div>
 					<!-- 
 						Jadval ro'yhati
 					-->
-					{% for r in rooms %}
-					<ul class="room-table build-table build-table--light build-table__item">
+					{% for s in salary %}
+					<ul class="salary-table build-table build-table--light build-table__item">
 						<li class="build-table__item build-table__item--1">
-							{{r.id}}
+							{{s.id}}
 						</li>
 						<li class="build-table__item build-table__item--2">
-							{{r.building_name}}
+							{{s.subject_name}}
 						</li>
 						<li class="build-table__item build-table__item--3">
-							{{r.room_number}}
+							{{s.lesson_pattern}}
 						</li>
 						<li class="build-table__item build-table__item--4">
-							{{r.room_type}}
+							{{s.lesson_type}}
 						</li>
-                       <li class="build-table__item build-table__item--5">
-							{{r.owner}}
+						<li class="build-table__item build-table__item--5">
+							{{s.group_type}}
+						</li>
+						<li class="build-table__item build-table__item--6">
+							{{s.month_amount}}
+						</li>
+            			<li class="build-table__item build-table__item--6">
+							{{ s.monthly_fee}}
 						</li>
 						<li class="build-table__item build-table__item--7">
 							<ul class="build-table__dropdown">
 								<li class="build-table__dropdown-item btn-edit">
-									<a href="modal-room.html">
-										<img src="images/dropdown-edit.svg" alt="dropdown icon">
-										Taxrirlash
-									</a>
+									<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
 								</li>
 								<li class="build-table__dropdown-item">
 									<img src="images/dropdown-delete.svg" alt="dropdown icon">
@@ -212,7 +219,7 @@
 						</li>
 					</ul>
 					{% endfor %}
-         			<ul class="pagination">
+          			<ul class="pagination">
 						<!-- pagination chap ikonka -->
 						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg' %}" alt="pagination icon"></a></li>
 						<li><a class="pagination__item pagination__item--active" href="#">1</a></li>
@@ -221,49 +228,62 @@
 						<li><a class="pagination__item" href="#">4</a></li>
 						<li class="pagination__item pagination-more">...</li>
 						<!-- pagination o'ng ikonka -->
-						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-right.svg' %}" alt="pagination icon"></li></a>
+						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-right.svg'%}" alt="pagination icon"></li></a>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- modal -->
 		<div id="modal" class="modal modal-select">
-			<form action="#" class="modal-wrapper modal-select--room" method="POST">
+			<form action="#" class="modal-wrapper" method="POST">
 				<div class="modal-inner">
-					<h4 class="modal__title">O‘quv xonalarini kiritish</h4>
+					<h4 class="modal__title">Dars soatlari va turlarni kiritish</h4>
 					<div class="modal-select__item">
             <div class="modal-select__box">
-            <label for="room">O‘quv bino nomini tanlash </label>
-            <select id="room" class="modal-input" name="room">
-              <option>Birinchi bosh bino amaliyot markazi</option>
-              <option>Ikkinchi bino amaliyot markazi</option>
-              <option>Uchinchibino amaliyot markazi</option>
-              <option>Andijon filial birinchi bino</option>
-              <option>Namangan filial uchinchi bino</option>
-              <option>Toshkent filial bosh amaliyot markazi</option>
+              <label for="subject">O‘tiladigan fanlar nomi</label>
+            <select id="subject" class="modal-input" name="subject">
+              <option value="Matematika">Matematika</option>
+              <option value="Ingliz tili">Ingliz tili</option>
+              <option value="Rus tili">Rus tili</option>
+              <option value="Arab tili">Arab tili</option>
+              <option value="Koreys tili">Koreys tili</option>
             </select>
             </div>
             <div class="modal-select__box">
-              <label for="room-type">O‘quv dars xonalar turi</label>
-            <select id="room-type" class="modal-input" name="room-type">
-              <option>Video dars</option>
-              <option>Lug‘at dars</option>
-              <option>Amaliyot dars</option>
+              <label for="group">Guruhlar turlari</label>
+            <select id="group" class="modal-input" name="group">
+              <option value="Katta yoshdagilar">Katta yoshdagilar</option>
+              <option value="O’rta yoshdagila">O’rta yoshdagilar</option>
+              <option value="Kichik yoshdagilar">Kichik yoshdagilar</option>
             </select>
             </div>
           </div>
           <div class="modal-select__item">
             <div class="modal-select__box">
-              <label for="room-number">O‘quv xonalarni joylashuv raqami</label>
-            <select id="room-number" class="modal-input" name="room-number">
-              <option>1.1 - xona</option>
-              <option>1.2 - xona</option>
-              <option>3.4 - xona</option>
+              <label for="subject-type">Dars uslubi</label>
+            <select id="subject-type" class="modal-input" name="subject-type">
+              <option value="Matematika">An’anaviy</option>
+              <option value="Ingliz tili">Yangilangan</option>
+              <option value="Rus tili">O‘smirlar</option>
             </select>
             </div>
             <div class="modal-select__box">
-              <label for="room-teacher">Birirktirilgan mas’ul shaxs</label>
-              <input id="room-teacher" class="modal-input" name="room-teacher" type="text" placeholder="Abdulaziz Karimov">
+              <label for="start-time">Darsni boshlanish vaqti </label>
+              <input id="start-time" class="modal-input number-rule" name="start-time" type="text" placeholder="2 oy">
+            </div>
+          </div>
+          <div class="modal-select__item">
+            <div class="modal-select__box">
+              <label for="lesson-type">Dars turlari</label>
+            <select id="lesson-type" class="modal-input" name="lesson-type">
+              <option value="Asosiy dars">Asosiy dars</option>
+              <option value="Video dars">Video dars</option>
+              <option value="Amaliyot dars">Amaliyot dars</option>
+            </select>
+            </div>
+            <div class="modal-select__box">
+              <label for="end-time">Darsni tugash vaqti </label>
+              <input id="end-time" class="modal-input number-rule" name="end-time" type="text" placeholder="150 00">
             </div>
           </div>
 				</div>
@@ -273,4 +293,4 @@
 				</div>
 			</form>
 		</div>
-{% endblock %}
+{% endblock content %}

@@ -4,29 +4,27 @@ from django.contrib.auth import authenticate, login
 from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 from django.contrib.auth import views 
 from django.contrib.auth.decorators import login_required
-from .models import Profile
-
-
-# def index(request):
-# 	return render(request, 'index.html')
+from .models import UserProfile, Timetable, Salary, Building, Staff, Other, Room, Student
+from. models import Subjects, Group, LessonType, Patterns
 
 @login_required
 def dashboard(request):
 	return render(request,'dashboard.html',{'section': 'dashboard'})
 
-
-
 def config(request):
 	return render(request, 'config.html')
 
 def time(request):
-	return render(request, 'time.html')
+	courses = Timetable.objects.all
+	return render(request, 'time.html', {'courses':courses})
 
 def building(request):
-	return render(request, 'building.html')
+	buildings = Building.objects.all()
+	return render(request, 'building.html', {'buildings':buildings})
 
 def room(request):
-	return render(request, 'room.html')
+	rooms = Room.objects.all()
+	return render(request, 'room.html', {'rooms':rooms})
 
 def register(request):
 	if request.method == 'POST':
@@ -37,7 +35,7 @@ def register(request):
 				user_form.cleaned_data['password']
 			)
 			new_user.save()
-			Profile.objects.create(user=new_user)
+			UserProfile.objects.create(user=new_user)
 			return render(request, 'register_done.html',
 			{'new_user':new_user})
 	else:
@@ -67,3 +65,28 @@ def edit(request):
 def profile(request):
 	user = request.user
 	return render(request, 'profile.html', {'user':user})
+
+def teacher(request):
+	teachers = Staff.objects.all()
+	return render(request, 'teacher.html', {'teachers':teachers})
+
+def salary(request):
+	salary = Salary.objects.all()
+	return render(request, 'salary.html', {'salary':salary})
+
+def other(request):
+	extra_details = Other.objects.all()
+	return render(request, 'other.html', {'extra_details':extra_details})
+
+def student(request):
+	students = Student.objects.all()
+	return render(request, 'student.html', {'students':students})
+
+def modal_time(request):
+	subjects = Subjects.objects.all()
+	groups = Group.objects.all()
+	lesson_types = LessonType.objects.all()
+	lesson_patterns = Patterns.objects.all()
+	return render(request, 'modal_time.html', 
+	{'subjects':subjects, 'groups':groups, 'lesson_types':lesson_types,
+	'lesson_patterns':lesson_patterns})

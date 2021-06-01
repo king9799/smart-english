@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Profile
-
+from .models import UserProfile
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -31,5 +30,5 @@ class UserEditForm(forms.ModelForm):
 
 class ProfileEditForm(forms.ModelForm):
     class Meta:
-        model = Profile
+        model = UserProfile
         fields = ('date_of_birth', 'photo')

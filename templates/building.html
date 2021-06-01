@@ -154,7 +154,7 @@
 								</div>
 							</div>
 						</div>
-						<ul class="build-table build-table--bold">
+						<ul class="building build-table build-table--bold">
 							<li class="build-table__item build-table__item--1">
 								№
 							</li>
@@ -180,24 +180,59 @@
 					<!-- 
 						Jadval ro'yhati
 					-->
+					{% comment %} {% for b in buildings %}
 					<ul class="build-table build-table--light">
 						<li class="build-table__item build-table__item--1">
-							1
+							{{ b.id }}
 						</li>
 						<li class="build-table__item build-table__item--2">
-							Birinchi bino amaliyot markazi
+							{{ b.name }}
 						</li>
 						<li class="build-table__item build-table__item--3">
-							Мarhamat shaxar Ipak yo‘li ko‘chasi 76-uyda joylash...
+							{{ b.location }}
 						</li>
 						<li class="build-table__item build-table__item--4">
-							5 ta xona
+							{{ b.room_amount }}
 						</li>
 						<li class="build-table__item build-table__item--5">
-							Muzaffar Xoji akani binosi
+							{{ b.nickname }}
 						</li>
 						<li class="build-table__item build-table__item--6">
-							17.02.2021
+							{{ b.added_time }}
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+				    </ul>
+					{% endfor %} {% endcomment %}
+					{% for b in buildings %}
+					<ul class="building build-table build-table--light">
+						<li class="build-table__item build-table__item--1">
+							{{b.id}}
+						</li>
+						<li class="build-table__item build-table__item--2">
+							{{ b.name }}
+						</li>
+						<li class="build-table__item build-table__item--3">
+							{{ b.location }}
+						</li>
+						<li class="build-table__item build-table__item--4">
+							{{ b.room_amount }}
+						</li>
+						<li class="build-table__item build-table__item--5">
+							{{ b.nickname }}
+						</li>
+						<li class="build-table__item build-table__item--6">
+							{{ b.added_time }}
 						</li>
 						<li class="build-table__item build-table__item--7">
 							<ul class="build-table__dropdown">
@@ -212,198 +247,7 @@
 							</ul>
 						</li>
 					</ul>
-					<ul class="build-table build-table--light">
-						<li class="build-table__item build-table__item--1">
-							2
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Birinchi bino amaliyot markazi
-						</li>
-						<li class="build-table__item build-table__item--3">
-							Мarhamat shaxar Ipak yo‘li ko‘chasi 76-uyda joylash...
-						</li>
-						<li class="build-table__item build-table__item--4">
-							5 ta xona
-						</li>
-						<li class="build-table__item build-table__item--5">
-							Muzaffar Xoji akani binosi
-						</li>
-						<li class="build-table__item build-table__item--6">
-							17.02.2021
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="build-table build-table--light">
-						<li class="build-table__item build-table__item--1">
-							3
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Birinchi bino amaliyot markazi
-						</li>
-						<li class="build-table__item build-table__item--3">
-							Мarhamat shaxar Ipak yo‘li ko‘chasi 76-uyda joylash...
-						</li>
-						<li class="build-table__item build-table__item--4">
-							5 ta xona
-						</li>
-						<li class="build-table__item build-table__item--5">
-							Muzaffar Xoji akani binosi
-						</li>
-						<li class="build-table__item build-table__item--6">
-							17.02.2021
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="images/dropdown-edit.svg" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="build-table build-table--light">
-						<li class="build-table__item build-table__item--1">
-							4
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Birinchi bino amaliyot markazi
-						</li>
-						<li class="build-table__item build-table__item--3">
-							Мarhamat shaxar Ipak yo‘li ko‘chasi 76-uyda joylash...
-						</li>
-						<li class="build-table__item build-table__item--4">
-							5 ta xona
-						</li>
-						<li class="build-table__item build-table__item--5">
-							Muzaffar Xoji akani binosi
-						</li>
-						<li class="build-table__item build-table__item--6">
-							17.02.2021
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="build-table build-table--light">
-						<li class="build-table__item build-table__item--1">
-							5
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Birinchi bino amaliyot markazi
-						</li>
-						<li class="build-table__item build-table__item--3">
-							Мarhamat shaxar Ipak yo‘li ko‘chasi 76-uyda joylash...
-						</li>
-						<li class="build-table__item build-table__item--4">
-							5 ta xona
-						</li>
-						<li class="build-table__item build-table__item--5">
-							Muzaffar Xoji akani binosi
-						</li>
-						<li class="build-table__item build-table__item--6">
-							17.02.2021
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="images/dropdown-edit.svg" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="build-table build-table--light">
-						<li class="build-table__item build-table__item--1">
-							6
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Birinchi bino amaliyot markazi
-						</li>
-						<li class="build-table__item build-table__item--3">
-							Мarhamat shaxar Ipak yo‘li ko‘chasi 76-uyda joylash...
-						</li>
-						<li class="build-table__item build-table__item--4">
-							5 ta xona
-						</li>
-						<li class="build-table__item build-table__item--5">
-							Muzaffar Xoji akani binosi
-						</li>
-						<li class="build-table__item build-table__item--6">
-							17.02.2021
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="images/dropdown-edit.svg" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="images/dropdown-delete.svg" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<ul class="build-table build-table--light">
-						<li class="build-table__item build-table__item--1">
-							7
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Birinchi bino amaliyot markazi
-						</li>
-						<li class="build-table__item build-table__item--3">
-							Мarhamat shaxar Ipak yo‘li ko‘chasi 76-uyda joylash...
-						</li>
-						<li class="build-table__item build-table__item--4">
-							5 ta xona
-						</li>
-						<li class="build-table__item build-table__item--5">
-							Muzaffar Xoji akani binosi
-						</li>
-						<li class="build-table__item build-table__item--6">
-							17.02.2021
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="images/dropdown-edit.svg" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="images/dropdown-delete.svg" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
+					{%endfor%}
 					<ul class="pagination">
 						<!-- pagination chap ikonka -->
 						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg' %}" alt="pagination icon"></a></li>

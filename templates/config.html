@@ -139,14 +139,14 @@
 			<img class="config-img" src="{% static 'images/config-img-1.png' %}" alt="config img">
 		</a>
 
-		<a class="config-box" href="#">
+		<a class="config-box" href="{% url 'settings:teacher'%}">
 			<h4 class="config-title">
 				O‘qituvchi va xodimlarturini kiritish
 			</h4>
 			<img class="config-img" src="{% static 'images/config-img-2.png' %}" alt="config img">
 		</a>
 
-		<a class="config-box" href="#">
+		<a class="config-box" href="{% url 'settings:salary'%}">
 			<h4 class="config-title">
 				O‘quv badal oylik to‘lov turlarini kiritish
 			</h4>
@@ -160,7 +160,7 @@
 			<img class="config-img" src="{% static 'images/config-img-4.png' %}" alt="config img">
 		</a>
 
-		<a class="config-box" href="#">
+		<a class="config-box" href="{% url 'settings:other'%}">
 			<h4 class="config-title">
 				Boshqa qo‘shimcha fanlarni kiritish
 			</h4>
@@ -172,6 +172,13 @@
 				O‘quv xonalarini kiritish va nomlash
 			</h4>
 			<img class="config-img" src="{% static 'images/config-img-6.png' %}" alt="config img">
+		</a>
+
+		<a class="config-box" href="{% url 'settings:student' %}">
+			<h4 class="config-title">
+				O‘quvchi va talabalarni ro‘yxatdan o‘tkazish
+			</h4>
+			<img class="config-img" src="{% static 'images/config-img-2.png'%}" alt="config img">
 		</a>
 
 	</section> 

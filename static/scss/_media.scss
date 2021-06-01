@@ -9,9 +9,7 @@
   .cards__list-item {
     padding: 5px 16px;
   }
-}
 
-@media(max-width: 1440px){
   .content-item{
     left: 305px;
   }
@@ -176,7 +174,9 @@
 
   .build-top__item input[name="build-search"],
   .build-export__item,
-  .build-export__number input{
+  .build-export__number input,
+  .categories,
+  .filter{
     font-size: 12px;
     line-height: 18px;
   }
@@ -215,19 +215,24 @@
   }
   .build-export__number input,
   .build-top__item input[name="build-search"],
-  .build-export__item{
+  .build-export__item,
+  .categories,
+  .filter{
     height: 35px;
+  }
+
+  .categories,
+  .filter{
+    &-list_active{
+      top: 40px;
+    }
   }
 
   .build-table{
     font-size: 13px;
     line-height: 16px;
-    text-align: center;
     &--light{
       padding: 16px 20px;
-    }
-    &--bold{
-      text-align: center;
     }
   }
   .build-export__dropdown{
@@ -294,6 +299,13 @@
       padding: 11px 24px;
       margin-top: 20px;
     }
+    &-select{
+      padding: 10px;
+    }
+  }
+
+  select{
+    padding: 10px!important;   
   }
 }
 
@@ -406,6 +418,8 @@
       width: 100%;
     }
   }
+
+  
 }
 
 @media(max-width: 1050px){
@@ -462,6 +476,99 @@
     width: 14px;
     top: 42%;
   }
+
+  .content-item{
+    overflow-x: auto;
+    .container{
+      margin: 0 0 0 14px;
+    }
+    .build-table,
+    .build-search{
+      width: fit-content;
+    }
+  
+    .time-table{
+      grid-template-columns: 10px 110px 100px 100px 100px 100px 100px 30px;
+      text-align: center;
+      gap: 0 15px;
+    }
+  
+    .salary-table{
+      grid-template-columns: 10px 120px 100px 100px 120px 100px 100px 30px;
+      text-align: center;
+      gap: 0 15px;
+    }
+  
+    .building{
+      grid-template-columns: 10px 150px 120px 120px 150px 100px 30px;
+      text-align: center;
+      gap: 0 15px;
+    }
+  
+    .other-table{
+      grid-template-columns: 10px 120px 100px 120px 150px 100px 100px 30px;
+      text-align: center;
+      gap: 0 15px;
+      align-items: center;
+    }
+  
+    .room-table{
+      grid-template-columns: 10px 150px 100px 120px 150px 30px;
+      text-align: center;
+      gap: 0 15px;
+    }
+
+    .build-export__number input,
+    .build-top__item input[name="build-search"],
+    .build-export__item,
+    .filter,
+    .categories {
+      height: 30px;
+    }
+  
+    .build-export{
+      width: 110px;
+      &__dropdown{
+        top: 35px;
+      }
+    }
+  
+    .build-top__item input[name="build-search"]{
+      width: 170px;
+      font-size: 10px;
+    }
+  
+    .pagination{
+      &__item{
+        height: 25px;
+        width: 25px;
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+      img{
+        width: 15px;
+        height: 10px;
+      }
+    }
+  
+    .enter{
+      padding: 6px 18px;
+      font-size: 12px;
+    }
+  
+    .build-table--light {
+      padding: 12px 15px;
+    } 
+  
+    .build-search{
+      padding: 15px;
+    }
+    .build-table--light .build-table__item--7 {
+      height: 14px;
+  }
+  
+  }
+
 }
 
 @media(max-width: 950px){
@@ -609,6 +716,11 @@
       width: fit-content;
     }
   }
+
+  .build-table__item{
+    display: grid;
+  }
+
 }
 
 @media(max-width: 740px){
@@ -659,6 +771,15 @@
   }
   .logout-btn{
     top: 200px;
+  }
+
+  .student-table{
+    grid-template-columns: 20px 160px 80px 80px 80px 80px 80px 120px 40px 110px 100px 100px 100px 100px 100px 100px 100px 30px;
+    gap: 0 20px;
+  }
+  .teacher-table{
+    grid-template-columns: 10px 120px 60px 80px 80px 80px 110px 90px 80px 60px 80px 100px 120px 70px 30px;
+    gap: 0 20px;
   }
 }
 
@@ -796,9 +917,6 @@
     width: 70%;
   }
 
-  .build-top{
-    flex-direction: column-reverse;
-  }
   .build-export__second {
     margin-bottom: 15px;
   }
@@ -828,9 +946,21 @@
       padding: 0 0 5px 0;
     }
   }
-  .modal-select--room{
-    
+
+  .student-table{
+    grid-template-columns: 10px 130px 60px 60px 60px 50px 60px 100px 40px 80px 80px 80px 80px 80px 80px 80px 60px 30px;
+    gap: 0 10px;
+    line-height: 120%;
   }
+
+  .teacher-table{
+    grid-template-columns: 10px 100px 60px 60px 60px 60px 90px 60px 80px 60px 60px 80px 100px 70px 30px;
+    gap: 0 10px;
+    line-height: 120%;
+    width: fit-content;
+    text-align: center!important;
+  }
+
 }
 
 @media(max-width: 450px){
@@ -863,6 +993,10 @@
   }
 }
 @media(max-width: 400px){
+  .page-title{
+    font-size: 11px;
+    line-height: 130%;
+  }
   .header-info{
     text-align: center;
   }

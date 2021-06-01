@@ -130,7 +130,7 @@
 					<h3 class="page-title">
 						Dars soatlarini kiritish va uni jurnali
 					</h3>
-					<a class="enter" href="#">Kiritish</a>
+					<a class="enter" href="{% url 'settings:modal_time'%}">Kiritish</a>
 				</div>
 				<div class="container">
 					<div class="build-search">
@@ -153,7 +153,7 @@
 								</div>
 							</div>
 						</div>
-						<ul class="build-table build-table--bold build-time">
+						<ul class="time-table build-table build-table--bold ">
 							<li class="build-table__item build-table__item--1">
 								№
 							</li>
@@ -180,251 +180,43 @@
 					<!-- 
 						Jadval ro'yhati
 					-->
-					<ul class="build-table build-table--light build-table__item">
+					{% for c in courses %}
+					<ul class="time-table build-table build-table--light build-table__item">
 						<li class="build-table__item build-table__item--1">
-							1
+							{{c.id}}
 						</li>
 						<li class="build-table__item build-table__item--2">
-							Ingliz tili
+							{{c.subject_name}}
 						</li>
 						<li class="build-table__item build-table__item--3">
-							An’anaviy
+							{{c.lesson_pattern}}
 						</li>
 						<li class="build-table__item build-table__item--4">
-							Asosiy dars
+							{{c.lesson_type}}
 						</li>
 						<li class="build-table__item build-table__item--5">
-							Kattalar
+							{{c.group_type}}
 						</li>
 						<li class="build-table__item build-table__item--6">
-							08:00
+							{{c.start_time}}
 						</li>
-            <li class="build-table__item build-table__item--6">
-							10:00
+                        <li class="build-table__item build-table__item--6">
+							{{c.finish_time}}
 						</li>
 						<li class="build-table__item build-table__item--7">
 							<ul class="build-table__dropdown">
 								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
+									<img src="images/dropdown-edit.svg" alt="dropdown icon">
 									Taxrirlash
 								</li>
 								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
 									O‘chirish
 								</li>
 							</ul>
 						</li>
 					</ul>
-          <ul class="build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-							2
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Mentall arifmetika
-						</li>
-						<li class="build-table__item build-table__item--3">
-							Yangilangan
-						</li>
-						<li class="build-table__item build-table__item--4">
-							Video dars
-						</li>
-						<li class="build-table__item build-table__item--5">
-							O‘rta yoshlar
-						</li>
-						<li class="build-table__item build-table__item--6">
-							08:00
-						</li>
-            <li class="build-table__item build-table__item--6">
-							10:00
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-          <ul class="build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-							3
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Ingliz tili
-						</li>
-						<li class="build-table__item build-table__item--3">
-							O‘smirlar
-						</li>
-						<li class="build-table__item build-table__item--4">
-							Amaliyot dars
-						</li>
-						<li class="build-table__item build-table__item--5">
-							O‘rta yoshlar
-						</li>
-						<li class="build-table__item build-table__item--6">
-							08:00
-						</li>
-            <li class="build-table__item build-table__item--6">
-							10:00
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-          <ul class="build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-							4
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Ingliz tili
-						</li>
-						<li class="build-table__item build-table__item--3">
-							An’anaviy
-						</li>
-						<li class="build-table__item build-table__item--4">
-							Amaliyot dars
-						</li>
-						<li class="build-table__item build-table__item--5">
-							O‘rta yoshlar
-						</li>
-						<li class="build-table__item build-table__item--6">
-							08:00
-						</li>
-            <li class="build-table__item build-table__item--6">
-							10:00
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-          <ul class="build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-							5
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Ingliz tili
-						</li>
-						<li class="build-table__item build-table__item--3">
-							An’anaviy
-						</li>
-						<li class="build-table__item build-table__item--4">
-							Amaliyot dars
-						</li>
-						<li class="build-table__item build-table__item--5">
-							O‘rta yoshlar
-						</li>
-						<li class="build-table__item build-table__item--6">
-							13:00
-						</li>
-            <li class="build-table__item build-table__item--6">
-							15:30
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-          <ul class="build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-							6
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Ingliz tili
-						</li>
-						<li class="build-table__item build-table__item--3">
-							An’anaviy
-						</li>
-						<li class="build-table__item build-table__item--4">
-							Amaliyot dars
-						</li>
-						<li class="build-table__item build-table__item--5">
-							O‘rta yoshlar
-						</li>
-						<li class="build-table__item build-table__item--6">
-							13:00
-						</li>
-            <li class="build-table__item build-table__item--6">
-							15:30
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
-          <ul class="build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-							7
-						</li>
-						<li class="build-table__item build-table__item--2">
-							Ingliz tili
-						</li>
-						<li class="build-table__item build-table__item--3">
-							An’anaviy
-						</li>
-						<li class="build-table__item build-table__item--4">
-							Amaliyot dars
-						</li>
-						<li class="build-table__item build-table__item--5">
-							O‘rta yoshlar
-						</li>
-						<li class="build-table__item build-table__item--6">
-							13:00
-						</li>
-            <li class="build-table__item build-table__item--6">
-							15:30
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-									Taxrirlash
-								</li>
-								<li class="build-table__dropdown-item">
-									<img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-									O‘chirish
-								</li>
-							</ul>
-						</li>
-					</ul>
+					{% endfor %}
 					<ul class="pagination">
 						<!-- pagination chap ikonka -->
 						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg' %}" alt="pagination icon"></a></li>
@@ -438,65 +230,5 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		<!-- modal -->
-		<div id="modal" class="modal modal-select">
-			<form action="#" class="modal-wrapper" method="POST">
-				<div class="modal-inner">
-					<h4 class="modal__title">Dars soatlari va turlarni kiritish</h4>
-					<div class="modal-select__item">
-            <div class="modal-select__box">
-              <label for="subject">O‘tiladigan fanlar nomi</label>
-            <select id="subject" class="modal-input" name="subject">
-              <option value="Matematika">Matematika</option>
-              <option value="Ingliz tili">Ingliz tili</option>
-              <option value="Rus tili">Rus tili</option>
-              <option value="Arab tili">Arab tili</option>
-              <option value="Koreys tili">Koreys tili</option>
-            </select>
-            </div>
-            <div class="modal-select__box">
-              <label for="group">Guruhlar turlari</label>
-            <select id="group" class="modal-input" name="group">
-              <option value="Katta yoshdagilar">Katta yoshdagilar</option>
-              <option value="O’rta yoshdagila">O’rta yoshdagilar</option>
-              <option value="Kichik yoshdagilar">Kichik yoshdagilar</option>
-            </select>
-            </div>
-          </div>
-          <div class="modal-select__item">
-            <div class="modal-select__box">
-              <label for="subject-type">Dars uslubi</label>
-            <select id="subject-type" class="modal-input" name="subject-type">
-              <option value="Matematika">An’anaviy</option>
-              <option value="Ingliz tili">Yangilangan</option>
-              <option value="Rus tili">O‘smirlar</option>
-            </select>
-            </div>
-            <div class="modal-select__box">
-              <label for="start-time">Darsni boshlanish vaqti </label>
-              <input id="start-time" class="modal-input number-rule" name="start-time" type="text" placeholder="13:00">
-            </div>
-          </div>
-          <div class="modal-select__item">
-            <div class="modal-select__box">
-              <label for="lesson-type">Dars turlari</label>
-            <select id="lesson-type" class="modal-input" name="lesson-type">
-              <option value="Asosiy dars">Asosiy dars</option>
-              <option value="Video dars">Video dars</option>
-              <option value="Amaliyot dars">Amaliyot dars</option>
-            </select>
-            </div>
-            <div class="modal-select__box">
-              <label for="end-time">Darsni tugash vaqti </label>
-              <input id="end-time" class="modal-input number-rule" name="end-time" type="text" placeholder="15:30">
-            </div>
-          </div>
-				</div>
-				<div class="input-buttons">
-					<button id="modal-close" class="input-btn" type="button">Bekor qilish</button>
-				<button class="input-btn input-btn--submit" type="submit">Saqlash</button>
-				</div>
-			</form>
 		</div>
 {% endblock %}
