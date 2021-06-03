@@ -70,7 +70,27 @@ $(function(){
   $('.number-rule').on('input', function(){
     this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
   });
-  
+
+  // FILTER
+
+  let filter =  $('.filter');
+  let filterList =  $('.filter-list');
+
+  filter.on('click', function(){
+    filter.toggleClass('filter_active');
+    filterList.toggleClass('filter-list_active');
+    $('.filter-arrow').toggleClass('filter-arrow_active');
+  });
+
+  let category =  $('.categories');
+  let categoryList =  $('.categories-list');
+
+  category.on('click', function(){
+    category.toggleClass('categories_active');
+    categoryList.toggleClass('categories-list_active');
+  });
+
+
 
 });
 
@@ -79,9 +99,7 @@ let item = document.getElementsByClassName('build-table__dropdown');
 
 for(i = 0; i < edit.length; i++){
   edit[i].addEventListener('click', function(){
-    for(i = 0; i < item.length; i++){
-      this.classList.toggle('build-table__dropdown--active');
-    }
+      this.querySelector('.build-table__dropdown').classList.toggle('build-table__dropdown--active');
   });
 }
 
@@ -117,14 +135,17 @@ window.onclick = function(event){
   }
 }
 
-let button = document.querySelector('.btn-edit');
+let button = document.getElementsByClassName('btn-edit');
 let btnClose = document.querySelector('#modal-close');
 let modal = document.querySelector('#modal');
 let enter = document.querySelector('.enter');
 
-button.onclick = function(){
-  modal.classList.add('active');
+for(let i = 0; i < button.length; i++){
+  button[i].onclick = function(){
+    modal.classList.add('active');
+  }
 }
+
 
 enter.onclick = function(e){
   e.preventDefault();
@@ -139,4 +160,13 @@ window.onclick = function(event){
   if(event.target == modal) {
     modal.classList.remove('active');
   }
+}
+
+let greyBtn = document.getElementsByClassName('grey-btn');
+
+for(let i = 0; i < greyBtn.length; i++){
+  greyBtn[i].onclick = function(){
+    this.querySelector('.grey-arrow').classList.toggle('active');
+  }
+  
 }

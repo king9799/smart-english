@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.min.css" />
+		<link rel="stylesheet" href="css/main.min.css" />
+		<title>O‘quvchi va talabalarni ro‘yhatga olish jurnali</title>
+	</head> 
+  <body>
+    <div id="modal" class="modal active modal-select">
+    <form action="#" class="modal-wrapper modal-wrapper_huge modal-space" method="POST">
+      <div class="modal-inner">
+        <h4 class="modal__title">O‘quvchi va talabalarni ro‘yhatga olish  </h4>
+        <div class="modal-select__item modal-three">
+          <div class="modal-select__box">
+            <label for="fname">Ismi</label>
+            <input id="fname" class="modal-input" type="text" name="fname" placeholder="Shahzod">
+          </div>
+          <div class="modal-select__box">
+            <label for="birthday">Tug’ilgan sanasi</label>
+            <input id="birthday" class="modal-input" type="date" name="birthday" value="2020-01-22">
+          </div>
+          <div class="modal-select__box">
+            <label>Shaxsni tasdiqlovchi hujjat turi</label>
+            <div class="radio" style="grid-template-columns: 0.3fr 0.7fr 0.3fr 0.7fr 0.3fr 0.7fr;">
+              <input type="radio" name="doc" id="pass" value="Passport">
+              <label for="pass">Passport</label>
+              <input type="radio" name="doc" id="metrika" value="Metrka">
+              <label for="metrika">Metrka</label>
+              <input type="radio" name="doc" id="id" value="id">
+              <label for="id">ID-Card</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-select__item modal-three">
+          <div class="modal-select__box">
+            <label for="surname">Familyasi</label>
+            <input id="surname" class="modal-input" type="text" name="surname" placeholder="Ismoilov">
+          </div>
+          <div class="modal-select__box">
+            <label for="app-date">Ro‘yhatdan o‘tgan sana</label>
+            <input id="app-date" class="modal-input" type="date" name="app-date" value="2020-01-22">
+          </div>
+          <div class="modal-select__box">
+            <label for="passport">Passport seriyasi va raqami</label>
+            <div class="modal-passport">
+              <input id="passport" type="text" class="modal-input" placeholder="AB">
+              <input type="text" class="modal-input" placeholder="1234567">
+            </div>
+          </div>
+        </div>
+        <div class="modal-select__item modal-three">
+          <div class="modal-select__box">
+            <label for="father-name">Otasining ismi</label>
+            <input id="father-name" class="modal-input" type="text" name="father-name" placeholder="Farrux o‘g‘li">
+          </div>
+          <div class="modal-select__box">
+            <label for="id-code">ID-Kodi </label>
+            <input id="id-code" class="modal-input" type="text" name="id-code" placeholder="100007784">
+          </div>
+          <div class="modal-select__box">
+            <label for="id-card">ID-Card raqami</label>
+            <input id="id-card" class="modal-input" type="text" name="id-card" placeholder="AB1234567">
+          </div>
+          
+        </div>
+        <div class="modal-select__item modal-three">
+          <div class="modal-select__box">
+            <label for="gender">Jinsi</label>
+            <select id="gender" class="modal-input" name="gender">
+              <option value="Erkak">Erkak</option>
+              <option value="Ayol">Ayol</option>
+            </select>
+          </div>
+          <div class="modal-select__box">
+            <label for="address">Yashash joyi manzili</label>
+            <input type="text" name="address" id="address" class="modal-input" placeholder="Marhamat tumani Mingtepa MFY Ipak yo‘li ko‘chasi 83">
+          </div>
+          <div class="modal-select__box">
+            <label for="app-time">O‘ziga ma’qul vaqt</label>
+            <div class="modal-passport">
+              <input id="app-time" type="text" class="modal-input" placeholder="08:00">
+              <select class="modal-input" name="week-day">
+                <option>Dushanba</option>
+                <option>Seshanba</option>
+                <option>Chorshanba</option>
+              </select>
+            </div>
+          </div>
+          
+        </div>
+        <div class="modal-select__item modal-three">
+          <div class="modal-select__box">
+            <label for="login">Login</label>
+            <input type="text" class="modal-input" name="login" id="login" placeholder="Login">
+          </div>
+  
+          <div class="modal-select__box">
+            <label for="knowledge">O‘quvchining bilim darajasi</label>
+            <input type="text" class="modal-input" name="knowledge" id="knowledge" placeholder="0">
+          </div>
+  
+          <div class="modal-select__box">
+            <label for="tel">Telefon raqamlari</label>
+            <input type="tel" class="modal-input" name="tel" id="tel" placeholder="+99893 123 45 67">
+          </div>
+        </div>
+  
+        <div class="modal-select__item modal-three">
+          <div class="modal-select__box">
+            <label for="password">Parol</label>
+            <div class="password-wrapper">
+              <input type="text" class="modal-input" name="password" id="password">
+              <div class="password-icon"></div>
+            </div>
+          </div>
+        <div class="modal-select__box">
+          <label for="building">Filial va o‘quv binoni tanlash</label>
+          <select id="building" class="modal-input" name="building">
+            <option>Birinchi bino</option>
+            <option>Ikkinchi bino</option>
+            <option>Asosiy bino</option>
+          </select>
+        </div>
+  
+        <div class="modal-select__box">
+          <label for="captcha">Rasmdagi matnni kiriting</label>
+          <div class="captcha">
+            <input type="text" class="modal-input" id="captcha"
+            placeholder="WD54J">
+            <img class="captcha-img" src="images/captcha.png" alt="captcha">
+          </div>
+  
+      </div>
+  
+        </div>
+      
+      </div>
+  
+      <div class="input-buttons input-buttons_plus">
+        <div class="input-buttons__item grey-wrap">
+  
+          <div class="grey-btn">
+            <img src="images/grey-phone.svg" alt="grey img">
+            Ijobiy aloqa
+            <img class="grey-arrow" src="images/export-icon-2.svg" alt="grey img">
+            <div class="blue-select">
+              <ul class="blue-select-list">
+                <li>
+                  <a href="#">Taklif qilindi</a>
+                </li>                
+                <li>
+                  <a href="#">Aniq o‘qishga keladi</a>
+                </li>                
+                <li>
+                  <a href="#">Maslahatlashmoqchi</a>
+                </li>                
+                <li>
+                  <a href="#">Aniq o‘qimas ekan</a>
+                </li>
+                <li>
+                  <a href="#">Keyinroq o‘qishini ma’lum qildi</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="grey-btn">
+            <img src="images/grey-phone-bad.svg" alt="grey img">
+            Salbiy aloqa
+            <img class="grey-arrow" src="images/export-icon-2.svg" alt="grey img">
+            <div class="blue-select">
+              <ul class="blue-select-list">
+                <li><a href="#">Telefoni o‘chirilgan</a></li>                
+                <li><a href="#">Xizmat doirasidan
+                  tashqarida</a></li>                
+                <li><a href="#">Noto‘g‘ri raqam bergan</a></li>                
+                <li><a href="#">Ushbu raqam tarmoqda
+                  mavjud emas</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="grey-btn">
+            <img src="images/grey-message.svg" alt="grey img">
+            Sms aloqa
+            <img class="grey-arrow" src="images/export-icon-2.svg" alt="grey img">
+              <div class="blue-select">
+                <ul class="blue-select-list">
+                  <li>
+                    <a href="#">SMS - yoziladi</a>
+                  </li>                
+                  <li>
+                    <a href="#">SMS - yozildi</a>
+                  </li>                
+                  <li>
+                    <a href="#">SMS - ni qabul qildi</a>
+                  </li>                
+                  <li>
+                    <a href="#">Aniq o‘qimas ekan</a>
+                  </li>
+                  <li>
+                    <a href="#">Ijtimoiy sahifasiga yozildi</a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+
+        </div>
+        <div class="input-buttons__item">
+          <a href="student.html" id="modal-close" class="input-btn">Bekor qilish</a>
+          <button class="input-btn input-btn--submit" type="submit">Saqlash</button>
+        </div>
+      </div>
+    </form>
+    </div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/libs.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

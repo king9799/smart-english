@@ -1,18 +1,18 @@
 {% extends "base.html" %}
-{% load static%}
+{% load static %}
 {% block title %}Home{% endblock%}
 {% block content %}
 	<div class="content">
 		<!-- left side menu -->
 		<aside class="navbar">
-			<a class="logo" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+			<a class="logo" href="{% url 'settings:index'%}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
 			<div class="btn-close">
 				<span></span>
 				<span></span>
 			</div>
 			<ul class="menu">
 				<li class="menu__item">
-					<a class="menu__link menu__link--active" href="index.html">
+					<a class="menu__link menu__link--active" href="{% url 'settings:index'%}">
 					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M4 15.3333C4 16.4379 4.89543 17.3333 6 17.3333H12.6667C13.7712 17.3333 14.6667 16.4379 14.6667 15.3333V6C14.6667 4.89543 13.7712 4 12.6667 4H6C4.89543 4 4 4.89543 4 6V15.3333ZM4 26C4 27.1046 4.89543 28 6 28H12.6667C13.7712 28 14.6667 27.1046 14.6667 26V22C14.6667 20.8954 13.7712 20 12.6667 20H6C4.89543 20 4 20.8954 4 22V26ZM17.3333 26C17.3333 27.1046 18.2288 28 19.3333 28H26C27.1046 28 28 27.1046 28 26V16.6667C28 15.5621 27.1046 14.6667 26 14.6667H19.3333C18.2288 14.6667 17.3333 15.5621 17.3333 16.6667V26ZM19.3333 4C18.2288 4 17.3333 4.89543 17.3333 6V10C17.3333 11.1046 18.2288 12 19.3333 12H26C27.1046 12 28 11.1046 28 10V6C28 4.89543 27.1046 4 26 4H19.3333Z" fill="#637798"/>
 					</svg>
@@ -70,12 +70,12 @@
 					</a>
 				</li>
 			</ul>
-			<a class="logout-btn" href="log-in.html">
+			<a type='button' id="myBtn" class="logout-btn" href="{% url 'settings:logout'%}">
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M22.6667 10.6667L20.7867 12.5467L22.8933 14.6667H12V17.3333H22.8933L20.7867 19.44L22.6667 21.3333L28 16L22.6667 10.6667ZM6.66667 6.66667H16V4H6.66667C5.2 4 4 5.2 4 6.66667V25.3333C4 26.8 5.2 28 6.66667 28H16V25.3333H6.66667V6.66667Z" fill="#637798"/>
 					</svg>
 					Chiqish
-			</a>
+			</a>			
 		</aside>
 	<!-- header -->
 		<header class="header">
@@ -233,4 +233,5 @@
 		</section> 
 		</div>
 	</div>
+
 {% endblock%}
